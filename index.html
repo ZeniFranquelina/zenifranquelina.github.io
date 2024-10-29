@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dra. Zeni Franquelina - Esteticista e Cosmetóloga</title>
     <style>
+        /* Estilo Base */
         body {
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
             background-color: #fff0f5;
             color: #4b2c39;
+            overflow-x: hidden;
         }
 
         header {
             background-color: #e0b1cb;
             padding: 20px;
             text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         header img {
@@ -31,6 +34,7 @@
         .content {
             text-align: center;
             padding: 30px;
+            animation: slideUp 1.5s ease-out;
         }
 
         .profile-pic {
@@ -39,6 +43,7 @@
             height: 200px;
             object-fit: cover;
             border: 4px solid #e0b1cb;
+            animation: pulse 2s infinite alternate;
         }
 
         .description {
@@ -49,24 +54,52 @@
 
         .button {
             margin-top: 15px;
-            padding: 10px 20px;
+            padding: 12px 24px;
             background-color: #d883a3;
             color: white;
-            border: none;
+            border: 2px solid #ff69b4;
             border-radius: 25px;
-            font-size: 16px;
+            font-size: 18px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: 0.5s;
+        }
+
+        .button:hover::before {
+            left: 100%;
         }
 
         .button:hover {
-            background-color: #c77495;
+            background-color: #ff69b4;
+            box-shadow: 0 0 15px #ff69b4, 0 0 30px #ff69b4;
+        }
+
+        .buttons-group {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
         .section-title {
             margin-top: 40px;
             font-size: 28px;
             color: #4b2c39;
+            animation: fadeIn 2s ease-in-out;
         }
 
         .info-section {
@@ -74,6 +107,7 @@
             text-align: left;
             max-width: 800px;
             margin: auto;
+            animation: slideUp 2s ease-out;
         }
 
         .info-item {
@@ -91,17 +125,36 @@
             line-height: 1.6;
         }
 
-        .buttons-group {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+        footer {
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #e0b1cb;
+            color: #4b2c39;
+            text-align: center;
+            font-size: 14px;
+            animation: fadeIn 2s ease-in-out;
         }
 
         @media (max-width: 600px) {
             .buttons-group {
                 flex-direction: column;
             }
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
         }
     </style>
 </head>
@@ -138,52 +191,33 @@
         <div class="info-section">
             <div class="info-item">
                 <h3>Esteticista</h3>
-                <p>
-                    Como esteticista, a Dra. Zeni é especializada em tratamentos que realçam a beleza e saúde da pele, 
-                    proporcionando bem-estar e autoestima aos seus pacientes.
-                </p>
+                <p>Como esteticista, a Dra. Zeni é especializada em tratamentos que realçam a beleza e saúde da pele.</p>
             </div>
-
             <div class="info-item">
                 <h3>Cosmetóloga</h3>
-                <p>
-                    Com formação em cosmetologia, a Dra. Zeni utiliza produtos dermocosméticos avançados para tratamentos 
-                    personalizados, visando resultados seguros e eficazes.
-                </p>
+                <p>Com formação em cosmetologia, utiliza produtos dermocosméticos para tratamentos seguros e eficazes.</p>
             </div>
-
             <div class="info-item">
                 <h3>Tricologista Capilar</h3>
-                <p>
-                    Como tricologista capilar, a Dra. Zeni se especializa em cuidar da saúde do couro cabeludo e dos fios, 
-                    aplicando terapias avançadas recomendadas por especialistas médicos para combater problemas capilares.
-                </p>
+                <p>Especialista na saúde do couro cabeludo e dos fios, aplicando terapias avançadas recomendadas por médicos.</p>
             </div>
-
             <div class="info-item">
                 <h3>Técnica de Estética Belutti na Hyaluron Pen</h3>
-                <p>
-                    Com expertise na Hyaluron Pen, a Dra. Zeni oferece procedimentos estéticos não invasivos, aplicando 
-                    substâncias hidratantes e volumizadoras sem o uso de agulhas.
-                </p>
+                <p>Oferece procedimentos não invasivos com a Hyaluron Pen, sem uso de agulhas.</p>
             </div>
-
             <div class="info-item">
                 <h3>Especialista em Agulhamento Indolor</h3>
-                <p>
-                    Utilizando técnicas modernas de agulhamento, a Dra. Zeni garante tratamentos estéticos eficazes e 
-                    praticamente indolores, promovendo rejuvenescimento e revitalização da pele.
-                </p>
+                <p>Realiza agulhamento moderno e indolor, promovendo rejuvenescimento.</p>
             </div>
-
             <div class="info-item">
                 <h3>Micropigmentadora</h3>
-                <p>
-                    A Dra. Zeni também é especialista em micropigmentação, realizando procedimentos precisos para realçar 
-                    a beleza natural, como design de sobrancelhas e lábios.
-                </p>
+                <p>Realiza micropigmentação precisa, realçando a beleza natural com design de sobrancelhas e lábios.</p>
             </div>
         </div>
     </div>
+
+    <footer>
+        Todos os direitos reservados a Zeni Franquelina
+    </footer>
 </body>
 </html>
